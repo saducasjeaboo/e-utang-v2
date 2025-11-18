@@ -1,0 +1,79 @@
+<?php
+session_start();
+// If not logged in, redirect to login page
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header('Location: login.php');
+    exit;
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Utang System</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+</head>
+<body>
+
+    <div id="app">
+        
+        <header>
+            <div class="header-left">
+                <button id="theme-toggle" class="btn-icon">
+                    <span class="material-icons-outlined">dark_mode</span>
+                </button>
+                <button id="search-btn" class="btn-icon">
+                    <span class="material-icons-outlined">search</span>
+                </button>
+                <div id="search-bar" class="hidden">
+                    <input type="text" id="search-input" placeholder="Search debtors...">
+                    <button id="close-search" class="btn-icon">
+                        <span class="material-icons-outlined">close</span>
+                    </button>
+                </div>
+            </div>
+            <h1 id="app-title">E-Utang System</h1>
+        </header>
+
+        <main id="page-content"></main>
+
+        <nav id="bottom-nav">
+            <button class="nav-btn active" data-page="debtors">
+                <span class="material-icons-outlined">people</span>
+                <span>Debtors</span>
+            </button>
+            <button class="nav-btn" data-page="calculator">
+                <span class="material-icons-outlined">calculate</span>
+                <span>Calculator</span>
+            </button>
+            <button class="nav-btn" data-page="settings">
+                <span class="material-icons-outlined">settings</span>
+                <span>Settings</span>
+            </button>
+        </nav>
+
+        <footer>
+            Made by <a href="https://saducasjeaboo.github.io/my-web/" target="_blank"><strong>Jeabo Ray Saducas</strong></a>
+        </footer>
+
+    </div>
+
+    <div id="modal-overlay" class="hidden">
+        <div id="modal">
+            <h3 id="modal-title">Confirm Action</h3>
+            <p id="modal-message">Are you sure?</p>
+            <div class="modal-buttons">
+                <button id="modal-cancel" class="btn">Cancel</button>
+                <button id="modal-confirm" class="btn btn-danger">Confirm</button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="toast" class="hidden"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
