@@ -11,7 +11,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Utang System</title>
+    <title>e-Utang System</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
@@ -21,10 +21,9 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     <div id="app">
         
         <header>
-            <div class="header-left">
-                <button id="theme-toggle" class="btn-icon">
-                    <span class="material-icons-outlined">dark_mode</span>
+            
                 </button>
+            <div class="header-left">
                 <button id="search-btn" class="btn-icon">
                     <span class="material-icons-outlined">search</span>
                 </button>
